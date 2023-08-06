@@ -22,6 +22,9 @@ namespace CSharpWorkshop
                     case "todo":
                         Todo.Run();
                         break;
+                    case "factorialcal":
+                        FactorialCal.Run();
+                        break;
                     case "notespad": // I test random code in this file.
                         Notespad.Run();
                         break;
@@ -32,7 +35,7 @@ namespace CSharpWorkshop
             else
             {
                 Console.WriteLine();
-                Console.WriteLine("Please enter the exercise file name you wish to run. Type: dotnet run 'filename' (do not use quotes) then press enter.");
+                Console.WriteLine("Please try again, but enter the exercise file name you wish to run. Type: dotnet run 'file name' (do not use quotes or spaces) then press enter.");
                 Console.WriteLine();
                 // Delay the next message 3.5 seconds
                 Thread.Sleep(3500);
@@ -40,7 +43,7 @@ namespace CSharpWorkshop
                 // Calls method and assigns the returned array of strings to the variable "fileNames"
                 string[] fileNames = GetAvailableCases();
 
-                Console.WriteLine("The available files to run are:");
+                Console.WriteLine("The available file names to run are:");
                 Console.WriteLine();
 
                 // Loop through fileNames array and display each index
@@ -48,6 +51,7 @@ namespace CSharpWorkshop
                 {
                     Console.WriteLine(file);
                 }
+                Console.WriteLine();
             }
         }
 
