@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,6 +24,8 @@ namespace CSharpWorkshop
             Console.WriteLine("[R]emove a TODO:");
             Console.WriteLine("[E]xit");
 
+            List<string> list = new List<string>();
+
             // GRAB WHAT HAS BEEN TYPED
             var userChoice = Console.ReadLine();
 
@@ -31,45 +34,60 @@ namespace CSharpWorkshop
             {
                 userChoice = userChoice.ToUpper();
 
-                // SWITCH STATEMENT
-                switch (userChoice)
+                if (userChoice == "S")
                 {
-                    case "S":
-                        PrintSelectedOption("See all TODOs");
-                        break;
-                    // ADDING EXTRA CASE, IF NEEDED (ALREADY CONVERTED TO UPPER WITH .TOUPPER()
-                    //case "a":
-                    case "A":
-                        PrintSelectedOption("Add a TODO");
-                        break;
-                    case "R":
-                        PrintSelectedOption("Remove a TODO");
-                        break;
-                    case "E":
-                        PrintSelectedOption("Exit");
-                        Console.WriteLine("Goodbye.");
-                        break;
-                    case "HELP":
-                        Console.WriteLine();
-                        Console.WriteLine("/help\nTips: When prompted a question or options, simply type the letter in between the brackets and press enter.");
-                        break;
-                    default:
-                        Console.WriteLine("Invalid choice");
-                        break;
+                    foreach (string item in list)
+                    {
+                        Console.WriteLine(item);
+                    }
+
                 }
-            }
-            else
-            {
-                Console.WriteLine("No input, try again.");
-            }
+                else if (userChoice == "A")
+                {
+                    while (true)
+                    {
+
+                        Console.WriteLine("What would you like to add?");
+                        var itemInput = Console.ReadLine();
+                        list.Add(itemInput);
+                        Console.WriteLine();
+                        Console.WriteLine($"{itemInput} has been added.");
+                        Console.WriteLine();
+                        Console.WriteLine($"Current list contains: {list}");
+                        Console.WriteLine();
+
+                        Console.WriteLine("Would you like to another task? (Y/N)");
+                        var toRepeat = Console.ReadLine();
+                        if (toRepeat.ToUpper() == "N")
+                        {
+                            //Console.WriteLine($"Total of {}");
+                            Thread.Sleep(3000);
+                            break;
+                        }
+
+                    }
+                }
+                else if (userChoice == "R")
+                {
+
+                }
+                else if (userChoice == "E")
+                {
+                    Console.WriteLine("Goodbye.");
+                }
+                else if (userChoice == "HELP")
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("/help\nTips: When prompted a question or options, simply type the letter in between the brackets and press enter.");
+                }
+                else
+                {
+                    Console.WriteLine("No input, try again. Goodbye.");
+                }
 
 
-            // METHOD
-            void PrintSelectedOption(string input)
-            {
-                Console.WriteLine($"You have Selected option: '{input}'");
-
             }
+
         }
     }
 }
