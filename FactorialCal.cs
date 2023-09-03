@@ -21,16 +21,23 @@ namespace CSharpWorkshop
             while (playAgain)
             {
                 Console.WriteLine("Enter a number");
-                var userInput = Convert.ToInt32(Console.ReadLine());
+                int userInputInt;
+                string userInput = Console.ReadLine();
+                if (int.TryParse(userInput, out userInputInt))
+                {
+                    var answer = Factorial(userInputInt);
 
-                var answer = Factorial(userInput);
-                Console.WriteLine();
-                Console.WriteLine($"The Factorial number of {userInput} is {answer}");
-                Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine($"The Factorial number of {userInputInt} is {answer}");
+                    Console.WriteLine();
 
-                playAgain = askToTryAgain();
-
-                
+                    playAgain = askToTryAgain();
+                } 
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid integer.");
+                }
+                             
             }
 
             Console.WriteLine("Goodbye!");
