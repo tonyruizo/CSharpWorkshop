@@ -1,10 +1,9 @@
-# CSharpWorkshop
+# Console1
 C# Exercises | Challenges | Training
 
-This repository contains a collection of C# exercises to help me practice and improve my C# programming skills. 
-Each exercise is organized in its own file, and you can run them using the .NET Core SDK.
+
 ```bash
-dotnet run
+dotnet run 
 ``` 
 
 ### Running the Exercises
@@ -22,7 +21,7 @@ Each exercise file can be run directly from the Terminal/Powershell. To run the 
    Change your terminal's working directory to the root folder of the cloned repository.
 
     ```bash
-    cd CSharpWorkshop
+    cd Console1
     ```
 
 3. **Run the Exercise**:
