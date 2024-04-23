@@ -1,10 +1,12 @@
-# Console1
-C# Exercises | Challenges | Training
+# Mini Console Programs
 
+C# Exercises | Mini Programs
 
 ```bash
 dotnet run 
-``` 
+```
+
+(If you know which exercise to run do `dotnet run <filename>`)
 
 ### Running the Exercises
 
@@ -21,12 +23,13 @@ Each exercise file can be run directly from the Terminal/Powershell. To run the 
    Change your terminal's working directory to the root folder of the cloned repository.
 
     ```bash
-    cd Console1
+    cd MiniConsolePrograms
     ```
 
 3. **Run the Exercise**:
    To execute a particular exercise enter the command *dotnet run* followed by the exercise name.
    As an illustration, I will use the file **Calculator.cs** as an example below.\
+   <br />
     **Note: file name is not case-sensitive. Also, do not add the .cs file extension.**
 
     ```bash
